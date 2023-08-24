@@ -1,4 +1,5 @@
 /* eslint-disable react/button-has-type */
+import { CloseCircleOutlined, SearchOutlined } from '@ant-design/icons';
 import { Fragment, useEffect, useRef, useState } from 'react';
 import styles from './index.less';
 
@@ -47,27 +48,39 @@ const SearchFile = ({ title, onSearch }) => {
             }}
             ref={oInput}
           />
-          <button
+          <CloseCircleOutlined
+            className={styles.searchBtn}
+            onClick={() => {
+              closeSearch();
+            }}
+          />
+          {/* <button
             className={styles.searchBtn}
             onClick={() => {
               closeSearch();
             }}
           >
             关闭
-          </button>
+          </button> */}
         </>
       ) : (
         <>
           <div>
             <span>{title}</span>
-            <button
+            <SearchOutlined
+              className={styles.searchBtn}
+              onClick={() => {
+                setSearchActive(true);
+              }}
+            />
+            {/* <button
               className={styles.searchBtn}
               onClick={() => {
                 setSearchActive(true);
               }}
             >
               搜索
-            </button>
+            </button> */}
           </div>
         </>
       )}
