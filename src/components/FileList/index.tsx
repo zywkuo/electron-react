@@ -6,7 +6,7 @@ const FileList = ({ files, editFile, saveFile, deleteFile }) => {
   return (
     <Fragment>
       <ul>
-        {files.map((item) => {
+        {files.map((item: any) => {
           return (
             <>
               <li key={item.id}>
